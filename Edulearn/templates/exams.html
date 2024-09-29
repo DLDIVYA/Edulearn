@@ -1,0 +1,407 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>TABLE</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="{% static 'thinkify/css/style.css' %}">
+
+	</head>
+	<body>
+		
+{#		<nav class="navbar navbar-expand-lg">#}
+{#			<div class="container">#}
+{#				#}
+{##}
+{#				<div class="d-lg-none ms-auto me-4">#}
+{#					<a href="#top" class="navbar-icon bi-person smoothscroll"></a>#}
+{#				</div>#}
+{##}
+{#				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">#}
+{#					<span class="navbar-toggler-icon"></span>#}
+{#				</button>#}
+{##}
+{#				<div class="collapse navbar-collapse" id="navbarNav">#}
+{#					<ul class="navbar-nav ms-lg-5 me-lg-auto">#}
+{#						<li class="nav-item">#}
+{#							<a class="nav-link click-scroll" href="#section_1">Home</a>#}
+{#						</li>#}
+{##}
+{#						<li class="nav-item">#}
+{#							<a class="nav-link click-scroll" href="#section_2">About</a>#}
+{#						</li>#}
+{##}
+{#						<li class="nav-item">#}
+{#							<a class="nav-link click-scroll" href="#section_3">FAQs</a>#}
+{#						</li>#}
+{##}
+{##}
+{#					</ul>#}
+{##}
+{#					<div class="d-none d-lg-block">#}
+{#						<a href="#top" class="navbar-icon bi-person smoothscroll"></a>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#		</nav>#}
+<nav class="navbar navbar-expand-lg  navbar navbar-dark bg-dark" >
+			<div class="container">
+
+
+				<div class="d-lg-none ms-auto me-4">
+					<a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+				</div>
+
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarNav">
+{#                    <img src="{% static 'thinkify/images/LOGO.png' %}" width="60px" height="40px" id=logo alt="Logo image" style="margin-left: 10px;" />#}
+					<ul class="navbar-nav ms-lg-5 me-lg-auto">
+						<li class="nav-item">
+							<a class="nav-link click-scroll" href="{% url 'thinkify:homeNext' %}">Home</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link click-scroll" href="#section_2">About</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link click-scroll" href="#section_3">FAQs</a>
+						</li>
+
+
+					</ul>
+
+					<div class="d-none d-lg-block">
+						<a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">COMPETITIVE EXAMS</h2>
+				</div>
+			</div>
+
+			
+
+{#			<form method="get" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search">#}
+{#				<div class="input-group input-group-lg">#}
+{#					<span class="input-group-text bi-search" id="basic-addon1"></span>#}
+{#                #}
+{#					<input name="keyword" type="search" class="form-control" id="keyword" placeholder="Search exam name,domain..." aria-label="Search">#}
+{##}
+{#					<button type="submit" class="form-control">Search</button>#}
+{#                    <br>#}
+{##}
+{#				</div>#}
+{#			</form>#}
+            <form method="get" action="{% url 'thinkify:exams' %}">
+                {{ form.as_p }}
+                <input type="submit" value="Submit" class="btn btn-primary" />
+
+            </form>
+			<p> <br></p>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+						    <thead class="thead-primary">
+                                <tr>
+{#                                  <th>S.NO</th>#}
+                                  <th>DOMAIN</th>
+                                  <th>EXAM</th>
+                                  <th>LINK</th>
+                                  <th>ELIGIBILITY</th>
+                                  <th>EXAM DATE</th>
+                                </tr>
+						    </thead>
+						    <tbody>
+                                {% for exam in exams %}
+                                    <tr>
+                                    <td>{{ exam.domain }}</td>
+                                    <td>{{ exam.examname}}</td>
+                                    <td>{{ exam.link }}</td>
+                                    <td>{{ exam.eligibility }}</td>
+                                    <td>{{ exam.exam_date }}</td>
+                                    </tr>
+                                {% endfor %}
+
+
+						    </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<script src="{% static 'thinkify/js/jquery.min.js' %}"></script>
+<script src="{% static 'thinkify/js/popper.js' %}"></script>
+<script src="{% static 'thinkify/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'thinkify/js/main.js' %}"></script>
+
+	</body>
+</html>
+<!--<tr>
+						      <th scope="row">1</th>
+						      <td>Education</td>
+						      <td>National Talent Search Exam(NTSE)</td>
+						      <td><a href="https://ncert.nic.in/national-talent-examination.php">http://www.kvpy.iisc.ernet.in/main/index.html</a></td>
+							  <td>Students studying in class X</td>
+							  <td>First week of NOV Month</td>
+						    </tr>
+						    <tr>
+								<th scope="row">2</th>
+								<td>Education</td>
+								<td>Kishore Vaigyanik Protsanan Yojna</td>
+								<td><a href="http://www.kvpy.iisc.ernet.in/main/index.html">http://www.kvpy.iisc.ernet.in/main/index.html</a></td>
+								<td>Stream SA- class10 passes
+									Stream SX- class 11 passes</td>
+								<td>3 rd Week of MAY Month</td>
+						    </tr>
+								<th scope="row">3</th>
+								<td>Education</td>
+								<td>National Standard Examination (NSE)</td>
+								<td><a href="https://www.iapt.org.in/exams/nse.html">https://www.iapt.org.in/exams/nse.html</a></td>
+								<td>Completion of HSC </td>
+								<td>First Week of DEC month</td>
+						    <tr>
+
+
+						    </tr>
+						    <tr>
+								<th scope="row">4</th>
+								<td>Abroad Entrance</td>
+								<td>Test of English as A Foreign Language(TOFEL)</td>
+								<td><a href="https://www.ets.org/toefl.html">https://www.ets.org/toefl.html</a></td>
+								<td>Students Passed 10th and 12th </td>
+								<td>First Week of JAN Month</td>
+						    </tr>
+
+						    <tr>
+								<th scope="row">5</th>
+								<td>Abroad Entrance</td>
+								<td>Graduate Management Admission Test</td>
+								<td><a href="https://www.mba.com/exams/gmat-exam">https://www.mba.com/exams/gmat-exam</a></td>
+								<td>Completion
+									Of 18 years old
+									 </td>
+								<td>In The month
+									OCT
+									</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">6</th>
+								<td>Abroad Entrance</td>
+								<td>Schloastic
+									Aptitude
+									Test
+									</td>
+								<td><a href="https://studyabroad.shiksha.com/exams/sat/">https://studyabroad.shiksha.com/exams/sat</a></td>
+								<td>No
+									Eligibilty
+									</td>
+								<td>In the month of
+									MAR
+									</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">7</th>
+								<td>College
+									Entrance
+									</td>
+								<td>Join
+									Entrance
+									Examination
+									</td>
+								<td><a href="httpjeemain.nta.nic.in/ s://">httpjeemain.nta.nic.in</a></td>
+								<td>Students Passed class 12th </td>
+								<td>Last Week of JAN Month</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">8</th>
+								<td>College Entrance</td>
+								<td>The National
+									Eligibilty
+									Cum
+									Entrance
+									Exam(NEET)
+									</td>
+								<td><a href="https://neet.nta.nic.in/sno">https://neet.nta.nic.in/sno</a></td>
+								<td>Must Have 10th and 12th completion
+									Or equivalent diploma completion
+									</td>
+								<td>First Week of MAY Month</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">9</th>
+								<td>College Entrance</td>
+								<td>Graduate
+									Aptitude
+									Test In
+									Engineering
+									</td>
+								<td><a href="https://gate.iitkgp.ac.in/">https://gate.iitkgp.ac.in</a></td>
+								<td>Candidate who is studying in 3rd year or higher year of UG degree</td>
+								<td>In the month of FEB</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">10</th>
+								<td>State Job</td>
+								<td>Tamil Nadu Public Service Commission (TNPSC)</td>
+								<td><a href="https://www.tnpsc.gov.in/">https://www.tnpsc.gov.in</a></td>
+								<td>Clearance of S.S.L.C
+									Exam
+									</td>
+								<td>In the month of APR</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">11</th>
+								<td>State Job</td>
+								<td>Tamilnadu
+									Teachers
+									Eligibilty
+									Test
+									</td>
+								<td><a href="https://trb.tn.nic.in/">https://trb.tn.nic.in</a></td>
+								<td>Completion of HSC</td>
+								<td>End of JAN
+									Month
+									</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">12</th>
+								<td>State
+									Job
+									</td>
+								<td>State Level
+									Eligibilty
+									Exam
+									</td>
+								<td><a href="https://sletneonline.co.in/">https://sletneonline.co.in</a></td>
+								<td>Must have Masters
+									Degree
+									</td>
+								<td>In the mid of MAR month</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">13</th>
+								<td>Central
+									Job
+									</td>
+								<td>University
+									Grants
+									Commision(UGC-NET)
+									</td>
+								<td><a href="/https://ugcnet.nta.nic.in">/https://ugcnet.nta.nic.in</a></td>
+									</td>
+								<td>Must have
+									Masters </td>
+								<td>In the mid of  JUNE month</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">14</th>
+								<td>Central
+									Job
+									</td>
+								<td>Union Public Service Commission</td>
+								<td><a href="https://upsc.gov.in/">https://upsc.gov.in/</a></td>
+								<td>Min of 21 years and should not cross the limit of 32 years</td>
+								<td>In the end of MAY Month</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">15</th>
+								<td>Central
+									Job</td>
+								<td>Certified
+									Management
+									Accountant(CMA)</td>
+								<td><a href="https://icmai.in/">https://icmai.in</a></td>
+								<td>Completion of class 12th </td>
+								<td>In the mid of DEC Month</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">16</th>
+								<td>Central
+									Job</td>
+								<td>Common Law
+									Admission
+									Test(CLAT)</td>
+								<td><a href="https://consortiumofnlus.ac.in/">https://consortiumofnlus.ac.in</a></td>
+								<td>Students Passed 10th and 12th </td>
+								<td>In the mid of DEC Month</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">17</th>
+								<td>Central
+									Job</td>
+								<td>Chartered
+									Accountant(CA)</td>
+								<td><a href="https://www.icai.org/">hhttps://www.icai.org</a></td>
+								<td>Students Passed 10th and 12th </td>
+								<td>In the mid of NOV/DEC months</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">18</th>
+								<td>Central
+									Job</td>
+								<td>Indian Foreign Service(IFS)</td>
+								<td><a href="https://ifs.nic.in/">https://ifs.nic.in</a></td>
+								<td>Must
+									hold a
+									Graduate
+									Degree</td>
+								<td>In the end of MAY Month</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">19</th>
+								<td>Abroad Entrance</td>
+								<td>International English Language
+									Testing
+									System(IELTS)</td>
+								<td><a href="https://www.upgradabroad.com/exam/ielt
+									s/eligibility">https://www.upgradabroad.com/exam/ielt
+									s/eligibility</a></td>
+								<td>Anybody
+									age above
+									16 years
+									old</td>
+								<td>In the mid of MAY Month</td>
+						    </tr>
+
+							<tr>
+								<th scope="row">20</th>
+								<td>College Entrance</td>
+								<td>Common Admission Test (CAT)</td>
+								<td><a href="https://iimcat.ac.in/">https://iimcat.ac.in</a></td>
+								<td>Must have a Bachelor degree</td>
+								<td>End of NOV Month</td>
+							</tr> -->

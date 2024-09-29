@@ -1,0 +1,359 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Personalisation Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'thinkify/vendor/bootstrap/css/Per_bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'thinkify/assets/css/Per_fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'thinkify/assets/css/Per_templatemo-plot-listing.css' %}">
+    <link rel="stylesheet" href="{% static 'thinkify/assets/css/Per_animated.css' %}">
+    <link rel="stylesheet" href="{% static 'thinkify/assets/css/Per_owl.css' %}">
+<!--
+
+TemplateMo 564 Plot Listing
+
+https://templatemo.com/tm-564-plot-listing
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+
+            <a><span class="icon"><img src="{% static 'thinkify/assets/images/Thinkify2.jpg' %}" alt="" style="width: 100px;height: 100px;"></span></a>
+
+            <ul class="nav">
+              <li><a href="file:///C:/Users/91908/OneDrive/Documents/templatemo_590_topic_listing[2]/templatemo_590_topic_listing/topics-detail.html" target="_blank">Home</a></li>
+              <li><a href="file:///C:/Users/91908/OneDrive/Documents/templatemo_590_topic_listing[1]/templatemo_590_topic_listing/index.html" target="_blank">About Us</a></li>
+              <li><a href="file:///C:/Users/91908/OneDrive/Documents/templatemo_590_topic_listing[1]/templatemo_590_topic_listing/index.html#section_4" class="active" target="_blank">FAQs</a></li>
+              <!--<li><a href="contact.html">Contact Us</a></li>--> 
+            </ul>        
+
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="top-text header-text">
+            <!--<h6>Check Out Our Personalisation</h6>-->
+            <h2>Check Out Our Personalisation Lists</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="listing-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="naccs">
+            <div class="grid">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="menu">
+                    <div class="first-thumb active">
+                      <div class="thumb">
+                        <span class="icon"><img src="{% static 'thinkify/assets/images/Education.png' %}" alt=""></span>
+                        EDUCATION
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="{% static 'thinkify/assets/images/scholar.png' %}" alt=""></span>
+                        SCHOLARSHIPS
+                      </div>
+                    </div>
+                    <!--<div>
+                      <div class="thumb">                 
+                        <span class="icon"><img src="assets/images/search-icon-03.png" alt=""></span>
+                        Cars
+                      </div>
+                    </div>
+                    <div class="last-thumb">
+                      <div class="thumb">                 
+                        <span class="icon"><img src="assets/images/search-icon-04.png" alt=""></span>
+                        Traveling
+                      </div>
+                    </div>-->
+                  </div>
+                </div> 
+                <div class="col-lg-9">
+                  <ul class="nacc">
+                  <!-- first category listing of items -->
+                    <li class="active">
+                      <div>
+                        <div class="col-lg-12">
+                          <div class="owl-carousel owl-listing">
+                            <div class="item">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="listing-item">
+                                    <div class="left-image">
+                                      <a href="#"><img src="{% static 'thinkify/assets/images/school Level Exams.png' %}" alt="" style="width:50px;height:50px;"></a>
+                                      <div class="hover-content">
+                                        <!--<div class="main-white-button">
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
+                                        </div>-->
+                                      </div>
+                                    </div>
+                                    <div class="right-content align-self-center">
+                                      <a href="#"><h4>Competitive Exams</h4></a>
+                                      <fieldset>
+                                        <legend></legend>
+                                        
+                                        <div>
+{#                                            <label for="input100"></label>#}
+                                          <input type="checkbox" id="input100" name="Exams" value="EDUCATION">
+                                          <label for="input100">EDUCATION</label><br><br>
+                                          <input type="checkbox" id="input100" name="Exams" value="COLLEGE ENTRANCE">
+                                          <label for="yes">COLLEGE ENTRANCE</label><br><br>
+                                          <input type="checkbox" id="input100" name="Exams" value="CENTRAL JOB" >
+                                          <label for="no">CENTRAL JOB</label><br><br>
+                                          <input type="checkbox" id="input100" name="Exams" value="STATE JOB" >
+                                          <label for="no">STATE JOB</label><br><br>
+
+                                        </div>
+
+                                        
+                                    
+                                      </fieldset>
+
+                                    </div>
+                                    
+                                  </div>
+                                  
+                                </div>
+
+                                  <div>
+                                    <button class="button">
+                                          Submit
+                                    </button>
+                                  </div>
+
+{#                                <div class="container-login100-form-btn">#}
+{#                                  <button class="login100-form-btn">#}
+{#                                    Create#}
+{#                                  </button>#}
+{#                                </div>#}
+                                <!--<div class="col-lg-12">
+                                  <div class="listing-item">
+                                    <div class="left-image">
+                                      <a href="#"><img src="assets/images/College Level Exams.jpg" alt=""></a>
+                                      <div class="hover-content">
+                                        <div class="main-white-button">
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="right-content align-self-center">
+                                      <a href="#"><h4>College Level Exams</h4></a><br>
+                                      <fieldset>
+                                        <legend></legend>
+                                        
+                                        <div>
+                                          <input type="checkbox" id="input100" name="Exams" value="JEE">
+                                          <label for="yes">JEE</label><br><br>
+                                          <input type="checkbox" id="input100" name="Exams" value="GATE" >
+                                          <label for="no">GATE</label><br><br>
+                                          <input type="checkbox" id="input100" name="Exams" value="NEET" >
+                                          <label for="no">NEET</label><br><br>
+                                          
+                                        </div>
+                                        
+                                        
+                                    
+                                      </fieldset>
+
+                                    </div>
+                                  </div>
+                                </div>-->
+                                <!--<div class="col-lg-12">
+                                  <div class="listing-item">
+                                    <div class="left-image">
+                                      <a href="#"><img src="assets/images/Job Related Exams.jpg" alt=""></a>
+                                      <div class="hover-content">
+                                        <div class="main-white-button">
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="right-content align-self-center">
+                                      <a href="#"><h4>Job Related Exams</h4></a>
+                                      <h6>by: Real ESTATE Agent</h6>
+                                      <span class="price"><div class="icon"><img src="assets/images/listing-icon-01.png" alt=""></div> $950 / month included tax</span>
+                                      <span class="details">Details: <em>860 sq ft</em></span>
+                                      <span class="info"><img src="assets/images/listing-icon-02.png" alt=""> 2 Bedrooms<br><img src="assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</span>
+                                      <fieldset>
+                                        <legend></legend>
+                                        
+                                        <div>
+                                          <input type="checkbox" id="input100" name="Exams" value="UPSC">
+                                          <label for="yes">UPSC</label><br><br>
+                                          <input type="checkbox" id="input100" name="Exams" value="TNPSC" >
+                                          <label for="no">TNPSC</label><br><br>
+                                          <input type="checkbox" id="input100" name="Exams" value="Bank Exams" >
+                                          <label for="no">Bank Exams</label><br><br>
+                                          
+                                        </div>
+                                        
+                                        
+                                    
+                                      </fieldset>
+                                    </div>
+                                  </div>
+                                </div>-->
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    
+                    <!-- second category listing of items -->
+                    <li>
+                      <div>
+                        <div class="col-lg-12">
+                          <div class="owl-carousel owl-listing">
+                            <div class="item">
+                              <div class="row">
+                                <div class="col-lg-12">
+                                  <div class="listing-item">
+                                    <div class="left-image">
+                                      <a href="#"><img src="{% static 'thinkify/images/Scholarship.png' %}" alt=""></a>
+                                      <div class="hover-content">
+                                        <!--<div class="main-white-button">
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
+                                        </div>-->
+                                      </div>
+                                    </div>
+                                    <div class="right-content align-self-center">
+                                      <a href="#"><h4>Scholarships</h4></a>
+                                      
+                                      <!--<span class="price"><div class="icon"><img src="assets/images/listing-icon-01.png" alt=""></div> $600 / month included tax</span>
+                                      <span class="details">Details: <em>860 sq ft</em></span>
+                                      <span class="info"><img src="assets/images/listing-icon-02.png" alt=""> 2 Bedrooms<br><img src="assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</span>-->
+                                      <fieldset>
+                                        <legend></legend>
+                                        
+                                        <div>
+                                          <input type="checkbox" id="input100" name="Exams" value="JEE">
+                                          <label for="yes">Navodaya Vidyalaya Samiti Recruitment</label><br><br>
+                                          <input type="checkbox" id="input100" name="Exams" value="GATE" >
+                                          <label for="no">Pre-Metric Scholarship</label><br><br>
+                                          <input type="checkbox" id="input100" name="Exams" value="NEET" >
+                                          <label for="no">Swami Vivekanandha Scholarship</label><br><br>
+                                          
+                                        </div>
+                                      </fieldset>
+                                    </div>
+                                  </div>
+                                </div>
+{#                                  <div class="text-center p-t-136">#}
+{#                                    <a class="txt2" href={% url 'thinkify:per_content' %}>#}
+{#                                        Create your Account#}
+{#                                        <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>#}
+{#                                    </a>#}
+{#                                  </div>#}
+                                <div class="container-login100-form-btn">
+                                  <button class="login100-form-btn">
+                                    Create
+                                  </button>
+                                </div>
+                                <!--<div class="col-lg-12">
+                                  <div class="listing-item">
+                                    <div class="left-image">
+                                      <a href="#"><img src="assets/images/listing-05.jpg" alt=""></a>
+                                      <div class="hover-content">
+                                        <div class="main-white-button">
+                                          <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="right-content align-self-center">
+                                      <a href="#"><h4>Food Item 2</h4></a>
+                                      <h6>by: Food Delivery</h6>
+                                      <span class="price"><div class="icon"><img src="assets/images/listing-icon-01.png" alt=""></div> $540 / month included tax</span>
+                                      <span class="details">Details: <em>860 sq ft</em></span>
+                                      <span class="info"><img src="assets/images/listing-icon-02.png" alt=""> 2 Bedrooms<br><img src="assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</span>
+                                    </div>
+                                  </div>
+                                </div> Comment: Placeholder 2 for Schloarships-->
+
+                              </div>
+                            </div>
+                            
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    
+                                    
+                    
+                  </ul>
+                  
+                </div>          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Scripts -->
+  <script src="{% static 'thinkify/vendor/jquery/Per_jquery.min.js' %}"></script>
+  <script src="{% static 'thinkify/vendor/bootstrap/js/Per_bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'thinkify/assets/js/Per_owl-carousel.js' %}"></script>
+  <script src="{% static 'thinkify/assets/js/Per_animation.js' %}"></script>
+  <script src="{% static 'thinkify/assets/js/Per_imagesloaded.js' %}"></script>
+  <script src="{% static 'thinkify/assets/js/Per_custom.js' %}"></script>
+
+</body>
+
+</html>

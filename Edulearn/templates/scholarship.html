@@ -1,0 +1,229 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>TABLE_SCHOLARSHIP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="{% static 'thinkify/css/style.css' %}">
+
+         <link href="{% static 'thinkify/css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <link href="{% static 'thinkify/css/bootstrap-icons.css' %}" rel="stylesheet">
+
+        <link href="{% static 'thinkify/css/templatemo-topic-listing.css' %}" rel="stylesheet">
+
+	</head>
+	<body>
+
+		<nav class="navbar navbar-expand-lg  navbar navbar-dark bg-dark" >
+			<div class="container">
+
+
+				<div class="d-lg-none ms-auto me-4">
+					<a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+				</div>
+
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarNav">
+{#                    <img src="{% static 'thinkify/images/LOGO.png' %}" width="60px" height="40px" id=logo alt="Logo image" style="margin-left: 10px;" />#}
+					<ul class="navbar-nav ms-lg-5 me-lg-auto">
+						<li class="nav-item">
+							<a class="nav-link click-scroll" href="{% url 'thinkify:homeNext' %}">Home</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link click-scroll" href="#section_2">About</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link click-scroll" href="#section_3">FAQs</a>
+						</li>
+
+
+					</ul>
+
+					<div class="d-none d-lg-block">
+						<a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">SCHOLARSHIPS</h2>
+				</div>
+			</div>
+
+			
+
+{#			<form method="get" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search">#}
+{#				<div class="input-group input-group-lg">#}
+{#					<span class="input-group-text bi-search" id="basic-addon1">#}
+{#						#}
+{#					</span>#}
+{#                #}
+{#					<input name="keyword" type="search" class="form-control" id="keyword" placeholder="Search for schloarships" aria-label="Search">#}
+{##}
+{#					<button type="submit" class="form-control">Search</button><br>#}
+{#					#}
+{#				#}
+{#				#}
+{#				</div>#}
+{#			</form>#}
+
+            <form method="get" action="{% url 'thinkify:scholarship' %}">
+                {{ form.as_p }}
+                <input type="submit" value="Submit" class="btn btn-primary" />
+
+            </form>
+
+			<p> <br></p>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+                            <thead class="thead-primary">
+                                <tr>
+                                    <th>SCHOLARSHIP EXAM</th>
+                                    <th>LINK</th>
+                                    <th>ELIGIBILITY</th>
+                                    <th>EXAM DATE</th>
+                                </tr>
+                            </thead>
+						    <tbody>
+                                {% for scholarship in scholarships %}
+
+                                    <tr>
+                                        <td>{{ scholarship.Scholarship_exam }}</td>
+                                        <td>{{ scholarship.link }}</td>
+                                        <td>{{ scholarship.eligibility }}</td>
+                                        <td>{{ scholarship.examdate }}</td>
+                                    </tr>
+
+
+                                {% endfor %}
+                            </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+
+	<script src="{% static 'thinkify/js/jquery.min.js' %}"></script>
+    <script src="{% static 'thinkify/js/popper.js' %}"></script>
+    <script src="{% static 'thinkify/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'thinkify/js/main.js' %}"></script>
+
+	</body>
+</html>
+
+<!--<tr>
+                                  <th scope="row">1</th>
+                                  <td>National Talent Search Exam(NTSE)</td>
+                                  <td><a href="https://ncert.nic.in/national-talent-examination.php">http://www.kvpy.iisc.ernet.in/main/index.html</a></td>
+                                  <td>Students studying in class X and should be below 18 years of age</td>
+                                  <td>In the mid of June</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Navodaya Vidyalaya
+                                        Samiti Recruitment</td>
+                                    <td><a href="www.navodaya.gov.in">www.navodaya.gov.in</a></td>
+                                    <td>Completion of 12th std</td>
+                                    <td>To be Announced</td>
+                                </tr>
+                                    <th scope="row">3</th>
+                                    <td>Kishore Vaigyanik
+                                        Protsahan Yojana</td>
+                                    <td><a href="www.kvpy.iisc.ernet.in">www.kvpy.iisc.ernet.in</a></td>
+                                    <td>Must have UG
+                                        degree certificate</td>
+                                    <td>To be Announced</td>
+                                <tr>
+
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>UP Scholarship</td>
+                                    <td><a href="scholarship.up.gov.in">scholarship.up.gov.in</a></td>
+                                    <td>Age limit 18</td>
+                                    <td>To be
+                                        Announced</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Bihar Scholarship</td>
+                                    <td><a href="www.scholarships.gov.in">www.scholarships.gov.in</a></td>
+                                    <td>Completion
+                                        Of 10 th std
+                                         </td>
+                                    <td>To be Announced</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>OASIS Scholarship</td>
+                                    <td><a href="http://OASIS.gov.in/">http://OASIS.gov.in/</a></td>
+                                    <td>Completion of 12th Std</td>
+                                    <td>In the month of FEB</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">7</th>
+
+                                    <td>Swami Vivekananda
+                                        Scholarship</td>
+                                    <td><a href="svmcm.wbhed.gov.in">svmcm.wbhed.gov.in</a></td>
+                                    <td>Pursuing 10th std </td>
+                                    <td>Last Week of NOV Month</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">8</th>
+                                    <td>National Means-cum-
+                                        Merit Scholarship
+                                        Scheme</td>
+                                    <td><a href=": https://scholarships.gov.in/">https://scholarships.gov.in/</a></td>
+                                    <td>Completion of
+                                        10th std</td>
+                                    <td>First Week of JAN Month</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">9</th>
+                                    <td>Maulana Azad
+                                        Scholarship
+                                        </td>
+                                    <td><a href="www.maef.nic.in">www.maef.nic.in</a></td>
+                                    <td>Minority category students studying from class IX to a Ph.D. level</td>
+                                    <td>To be announced</td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">10</th>
+                                    <td>10 Pre-Matric scholarship</td>
+                                    <td><a href="https://minorityaffairs.gov.in/">https://minorityaffairs.gov.in/</a></td>
+                                    <td>Must have graduate degree</td>
+                                    <td>To be announced</td>
+                                </tr>
+
+
+
+						    </tbody>-->
+

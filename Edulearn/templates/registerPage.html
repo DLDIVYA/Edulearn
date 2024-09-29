@@ -1,0 +1,125 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'thinkify/images/create_icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'thinkify/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'thinkify/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'thinkify/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'thinkify/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'thinkify/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'thinkify/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'thinkify/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'thinkify/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'thinkify/css/create_util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'thinkify/css/create_main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url({% static 'thinkify/images/create_bg-01.jpg' %})">
+			<div class="wrap-login100">
+				<form method='POST' class="login100-form validate-form">
+                    {% csrf_token %}
+					<span class="login100-form-logo">
+						<i class="zmdi zmdi-landscape"></i>
+					</span>
+
+					<span class="login100-form-title p-b-34 p-t-27">Create Your Account</span>
+
+					{% for field in form %}
+                        <div class = "wrap-input100 validate-input">
+                            <label for = "{{ field.id_for_label }}" class="form-label"></label>
+                            {{ field|add_class:'input100' }}
+                            <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                            {% for error in field.errors %}
+                                <span class="help-block">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+
+                    <div class="container-login100-form-btn">
+						<button type= 'submit' class="login100-form-btn">
+							Create
+						</button>
+                    </div>
+            </form>
+
+
+
+{#                    <div class="wrap-input100 validate-input" data-validate = "Enter username">#}
+{#						<input class="input100" type="text" name="username" placeholder="Enter a Username">#}
+{#						<span class="focus-input100" data-placeholder="&#xf207;"></span>#}
+{#					</div>#}
+{##}
+{#					<div class="wrap-input100 validate-input" data-validate="Enter password">#}
+{#						<input class="input100" type="password" name="pass" placeholder="Password">#}
+{#						<span class="focus-input100" data-placeholder="&#xf191;"></span>#}
+{#					</div>#}
+{#					#}
+{#					<div class="wrap-input100 validate-input" data-validate="Enter password">#}
+{#						<input class="input100" type="password" name="pass" placeholder="Confirm Password">#}
+{#						<span class="focus-input100" data-placeholder="&#xf191;"></span>#}
+{#					</div> #}
+{#                    <fieldset>#}
+{#						<legend>Personalisation:</legend>#}
+{#					  #}
+{#						<div>#}
+{#						  <input type="radio" id="input100" name="personalisation" value="yes">#}
+{#						  <label for="yes">YES</label>#}
+{#						  <input type="radio" id="input100" name="personalisation" value="no" >#}
+{#						  <label for="no">NO</label>#}
+{#						  #}
+{#						</div>#}
+{#					  #}
+{#						#}
+{#				#}
+{#					  </fieldset>#}
+{#					  #}
+
+
+
+
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="{% static 'thinkify/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'thinkify/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'thinkify/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'thinkify/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'thinkify/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'thinkify/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'thinkify/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'thinkify/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'thinkify/js/create_main.js' %}"></script>
+
+</body>
+</html>

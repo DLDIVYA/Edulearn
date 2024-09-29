@@ -1,0 +1,145 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>TABLE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'thinkify/css/style.css' %}">
+
+	</head>
+	<body>
+		
+	<!--	<nav class="navbar navbar-expand-lg">
+			<div class="container">
+				
+
+				<div class="d-lg-none ms-auto me-4">
+					<a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+				</div>
+
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-lg-5 me-lg-auto">
+						<li class="nav-item">
+							<a class="nav-link click-scroll" href="#section_1">Home</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link click-scroll" href="#section_2">About</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link click-scroll" href="#section_3">FAQs</a>
+						</li>
+
+
+					</ul>
+
+					<div class="d-none d-lg-block">
+						<a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	 -->
+	 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">THINKIFY</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+		  <ul class="navbar-nav">
+			<li class="nav-item active">
+			  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#">About</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#">FAQs</a>
+			</li>
+		  </ul>
+		</div>
+	  </nav>
+	  
+
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Personalisation</h2>
+				</div>
+			</div>
+
+			
+
+			<form method="get" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search">
+				<div class="input-group input-group-lg">
+					<span class="input-group-text bi-search" id="basic-addon1">
+						
+					</span>
+                
+					<input name="keyword" type="search" class="form-control" id="keyword" placeholder="Search exam name,domain..." aria-label="Search">
+
+					<button type="submit" class="form-control">Search</button><br>
+					
+				
+				
+				</div>
+			</form>
+
+			<p> <br></p>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-primary">
+						    <tr>
+						      <th>DOMAIN</th>
+						      <th>EXAM</th>
+						      <th>LINK</th>
+							  <th>ELIGIBILITY</th>
+							  <th>EXAM DATE</th>
+						    </tr>
+						  </thead>
+                            <tbody>
+                            <form action="{% url 'thinkify:filter' %}" method="POST"></form>
+                              {% for exam in exam_list %}
+                                        <tr>
+                                        <td>{{ exam.domain }}</td>
+                                        <td>{{ exam.examname}}</td>
+                                        <td>{{ exam.link }}</td>
+                                        <td>{{ exam.eligibility }}</td>
+                                        <td>{{ exam.exam_date }}</td>
+                                        </tr>
+                                {% endfor %}
+                            </tbody>
+
+
+{#						  </tbody>#}
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'thinkify/js/jquery.min.js' %}"></script>
+  <script src="{% static 'thinkify/js/popper.js' %}"></script>
+  <script src="{% static 'thinkify/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'thinkify/js/main.js' %}"></script>
+
+	</body>
+</html>
+
